@@ -14,7 +14,6 @@ export default function ProductDetails() {
   //Fetch slug
   const { qty, increaseQty, decreaseQty } = useStateContext();
 
-  console.log("whoa", qty);
   const { query } = useRouter();
   //Fetch graphql data
   const [results] = useQuery({
