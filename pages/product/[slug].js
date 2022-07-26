@@ -8,10 +8,13 @@ import {
   Quantity,
 } from "../../styles/ProductDetails";
 import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
+import { useStateContext } from "../../lib/context";
 
 export default function ProductDetails() {
   //Fetch slug
+  const { qty, increaseQty, decreaseQty } = useStateContext();
 
+  console.log("whoa", qty);
   const { query } = useRouter();
   //Fetch graphql data
   const [results] = useQuery({
@@ -23,7 +26,6 @@ export default function ProductDetails() {
   if (error) return <p>Oh no... {error.message}</p>;
 
   const { title, description, image } = data.products.data[0].attributes;
-  console.log("image", image);
   return (
     <DetailsStyle>
       <img src={image.data.attributes.formats?.small?.url} alt={title} />
@@ -34,12 +36,12 @@ export default function ProductDetails() {
           <span>Quantity</span>
           <button>
             {" "}
-            <AiFillPlusCircle />
+            <AiFillMinusCircle onClick={decreaseQty} />
           </button>
-          <p>0</p>
+          <p>{qty}</p>
           <button>
             {" "}
-            <AiFillMinusCircle />
+            <AiFillPlusCircle onClick={increaseQty} />
           </button>
         </Quantity>
         <Buy>Add to cart</Buy>

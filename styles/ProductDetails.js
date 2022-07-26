@@ -28,6 +28,7 @@ export const Quantity = styled.div`
     border: none;
     display: flex;
     font-size: 1.5rem;
+    cursor: pointer;
   }
 
   p {
