@@ -63,4 +63,14 @@ export const EmptyStyle = styled.div`
   }
 `;
 
-export const Quantity = styled.div``;
+export const Checkout = styled.div`
+  button {
+    background: var(--primary);
+    padding: 1rem 2rem;
+    width: 100%;
+    color: white;
+    margin-top: 2rem;
+    border: none;
+    cursor: pointer;
+  }
+`;

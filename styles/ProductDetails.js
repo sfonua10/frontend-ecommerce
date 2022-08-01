@@ -28,7 +28,7 @@ export const Quantity = styled.div`
     border: none;
     display: flex;
     font-size: 1.5rem;
-    cursor: pointer;
+    padding: 0rem 0.5rem;
   }
 
   p {
@@ -48,4 +48,5 @@ export const Buy = styled.button`
   background: var(--primary);
   color: white;
   font-weight: 500;
+  cursor: pointer;
 `;
